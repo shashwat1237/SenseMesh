@@ -1,0 +1,250 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 220 20% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 20%;
+
+    --primary: 174 42% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 174 25% 92%;
+    --secondary-foreground: 174 42% 35%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 10% 50%;
+
+    --accent: 174 30% 88%;
+    --accent-foreground: 174 42% 30%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Custom SenseMesh colors */
+    --danger: 15 85% 70%;
+    --danger-foreground: 15 90% 25%;
+    --danger-glow: 15 85% 70%;
+
+    --emotion: 45 90% 65%;
+    --emotion-foreground: 45 90% 25%;
+    --emotion-glow: 45 100% 75%;
+
+    --teal: 174 42% 45%;
+    --teal-light: 174 35% 90%;
+    --teal-glow: 174 60% 60%;
+
+    --lavender: 260 40% 85%;
+    --lavender-foreground: 260 30% 35%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 174 42% 45%;
+
+    --radius: 1rem;
+
+    /* Shadows and effects */
+    --shadow-soft: 0 4px 20px -4px hsl(220 20% 20% / 0.08);
+    --shadow-card: 0 8px 32px -8px hsl(220 20% 20% / 0.1);
+    --shadow-danger: 0 8px 32px -8px hsl(var(--danger) / 0.4);
+    --shadow-emotion: 0 4px 24px -4px hsl(var(--emotion) / 0.5);
+    --shadow-teal: 0 4px 24px -4px hsl(var(--teal) / 0.3);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 20% 10%;
+    --foreground: 0 0% 95%;
+
+    --card: 220 20% 14%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 220 20% 14%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 174 50% 50%;
+    --primary-foreground: 220 20% 10%;
+
+    --secondary: 220 15% 20%;
+    --secondary-foreground: 174 50% 60%;
+
+    --muted: 220 15% 18%;
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 220 15% 22%;
+    --accent-foreground: 174 50% 60%;
+
+    --danger: 15 80% 60%;
+    --danger-foreground: 15 90% 95%;
+    --danger-glow: 15 80% 50%;
+
+    --emotion: 45 85% 55%;
+    --emotion-foreground: 45 90% 95%;
+    --emotion-glow: 45 90% 45%;
+
+    --teal: 174 50% 50%;
+    --teal-light: 174 30% 20%;
+    --teal-glow: 174 60% 45%;
+
+    --lavender: 260 30% 30%;
+    --lavender-foreground: 260 40% 85%;
+
+    --border: 220 15% 22%;
+    --input: 220 15% 22%;
+    --ring: 174 50% 50%;
+
+    --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+    --shadow-card: 0 8px 32px -8px hsl(0 0% 0% / 0.4);
+    --shadow-danger: 0 8px 32px -8px hsl(var(--danger) / 0.5);
+    --shadow-emotion: 0 4px 24px -4px hsl(var(--emotion) / 0.4);
+    --shadow-teal: 0 4px 24px -4px hsl(var(--teal) / 0.4);
+
+    --sidebar-background: 220 20% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 18%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 220 15% 22%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+@layer utilities {
+  .glow-danger {
+    box-shadow: var(--shadow-danger);
+  }
+
+  .glow-emotion {
+    box-shadow: var(--shadow-emotion);
+  }
+
+  .glow-teal {
+    box-shadow: var(--shadow-teal);
+  }
+
+  .text-gradient-teal {
+    @apply bg-gradient-to-r from-primary to-teal-glow bg-clip-text text-transparent;
+  }
+}
+
+/* Sound wave animation */
+@keyframes soundwave {
+  0%, 100% {
+    transform: scaleY(0.5);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes pulse-danger {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes vibrate {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-2px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(2px);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-soundwave {
+  animation: soundwave 0.5s ease-in-out infinite;
+}
+
+.animate-pulse-danger {
+  animation: pulse-danger 1.5s ease-in-out infinite;
+}
+
+.animate-vibrate {
+  animation: vibrate 0.3s ease-in-out;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s ease-out forwards;
+}
+
+.animation-delay-100 {
+  animation-delay: 0.1s;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}

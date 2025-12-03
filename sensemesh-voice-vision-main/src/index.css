@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 0 0% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 15%;
+
+    --primary: 180 25% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 15 80% 75%;
+    --secondary-foreground: 0 0% 15%;
+
+    --muted: 0 0% 93%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 45 90% 70%;
+    --accent-foreground: 0 0% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 180 25% 55%;
+
+    --radius: 1rem;
+
+    --audio-output: 15 80% 75%;
+    --voice-input: 180 25% 55%;
+    --insight-glow: 45 90% 70%;
+
+    --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.08);
+    --glow-teal: 0 0 20px rgba(94, 167, 167, 0.3);
+    --glow-gold: 0 0 20px rgba(246, 224, 94, 0.4);
+    --glow-peach: 0 0 20px rgba(255, 183, 153, 0.3);
+  }
+
+  .dark {
+    --background: 0 0% 12%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 15%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 15%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 180 30% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 15 75% 65%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 45 85% 60%;
+    --accent-foreground: 0 0% 15%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
+    --ring: 180 30% 50%;
+
+    --audio-output: 15 75% 65%;
+    --voice-input: 180 30% 50%;
+    --insight-glow: 45 85% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}

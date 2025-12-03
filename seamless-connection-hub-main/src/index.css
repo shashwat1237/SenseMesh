@@ -1,0 +1,221 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+@layer base {
+  :root {
+    /* Soft pastel palette - calm & airy */
+    --background: 220 20% 97%;
+    --foreground: 220 15% 30%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 30%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 30%;
+
+    /* Muted Blue - Primary */
+    --primary: 220 40% 70%;
+    --primary-foreground: 220 20% 20%;
+    --primary-glow: 220 50% 80%;
+
+    /* Muted Lilac - Secondary */
+    --secondary: 270 30% 75%;
+    --secondary-foreground: 270 20% 25%;
+
+    --muted: 220 20% 94%;
+    --muted-foreground: 220 10% 50%;
+
+    /* Soft Sage - Accent */
+    --accent: 160 25% 70%;
+    --accent-foreground: 160 20% 25%;
+
+    --destructive: 0 60% 70%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 90%;
+    --input: 220 20% 92%;
+    --ring: 220 40% 70%;
+
+    --radius: 0.75rem;
+
+    /* Soft glows */
+    --glow-primary: 220 50% 80%;
+    --glow-secondary: 270 35% 80%;
+    --glow-accent: 160 30% 75%;
+
+    --sidebar-background: 220 20% 97%;
+    --sidebar-foreground: 220 15% 30%;
+    --sidebar-primary: 220 40% 70%;
+    --sidebar-primary-foreground: 220 20% 20%;
+    --sidebar-accent: 220 20% 94%;
+    --sidebar-accent-foreground: 220 15% 30%;
+    --sidebar-border: 220 20% 90%;
+    --sidebar-ring: 220 40% 70%;
+  }
+
+  .dark {
+    /* Soft charcoal tones - not pure black */
+    --background: 220 15% 15%;
+    --foreground: 220 15% 90%;
+
+    --card: 220 15% 18%;
+    --card-foreground: 220 15% 90%;
+
+    --popover: 220 15% 18%;
+    --popover-foreground: 220 15% 90%;
+
+    --primary: 220 45% 65%;
+    --primary-foreground: 220 15% 95%;
+    --primary-glow: 220 55% 75%;
+
+    --secondary: 270 35% 65%;
+    --secondary-foreground: 270 15% 95%;
+
+    --muted: 220 15% 22%;
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 160 30% 60%;
+    --accent-foreground: 160 15% 95%;
+
+    --destructive: 0 55% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 15% 25%;
+    --input: 220 15% 25%;
+    --ring: 220 45% 65%;
+
+    --glow-primary: 220 55% 75%;
+    --glow-secondary: 270 40% 70%;
+    --glow-accent: 160 35% 65%;
+
+    --sidebar-background: 220 15% 18%;
+    --sidebar-foreground: 220 15% 90%;
+    --sidebar-primary: 220 45% 65%;
+    --sidebar-primary-foreground: 220 15% 95%;
+    --sidebar-accent: 220 15% 22%;
+    --sidebar-accent-foreground: 220 15% 90%;
+    --sidebar-border: 220 15% 25%;
+    --sidebar-ring: 220 45% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 500;
+  }
+}
+
+@layer utilities {
+  .glow-soft {
+    box-shadow: 0 4px 20px hsl(var(--glow-primary) / 0.15);
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 20px hsl(var(--glow-primary) / 0.2), 0 0 40px hsl(var(--glow-primary) / 0.1);
+  }
+
+  .glow-secondary {
+    box-shadow: 0 0 20px hsl(var(--glow-secondary) / 0.2), 0 0 40px hsl(var(--glow-secondary) / 0.1);
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 20px hsl(var(--glow-accent) / 0.2), 0 0 40px hsl(var(--glow-accent) / 0.1);
+  }
+
+  /* Processing dot animation */
+  @keyframes processing-dot {
+    0%, 80%, 100% {
+      opacity: 0.3;
+      transform: scale(0.8);
+    }
+    40% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .processing-dot {
+    animation: processing-dot 1.4s ease-in-out infinite;
+  }
+
+  .processing-dot:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .processing-dot:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+
+  /* Waveform animation */
+  @keyframes waveform {
+    0%, 100% {
+      height: 8px;
+    }
+    50% {
+      height: 24px;
+    }
+  }
+
+  .waveform-bar {
+    animation: waveform 0.8s ease-in-out infinite;
+  }
+
+  /* Soft pulse */
+  @keyframes soft-pulse {
+    0%, 100% {
+      opacity: 0.4;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.7;
+      transform: scale(1.05);
+    }
+  }
+
+  .animate-soft-pulse {
+    animation: soft-pulse 2s ease-in-out infinite;
+  }
+
+  /* Fade in animation */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out forwards;
+  }
+
+  /* Float animation */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+}
